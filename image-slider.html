@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+    ************* Information About This File **************
+    ********************************************************
+    
+    allow: {
+        sNavs: true,             ------------ Make it True for show NavBar left right button
+        sDots: true,             ------------ Make it True for show Slider dots left right button
+        autoPlayStatus: true,    ------------ Make it True for autoplay slider
+        autoPlayInt: 3000,       ------------ Make it True for slider change time
+    },
+    slideItems: 1,               ------------ Add Any Number to divide slider item
+
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Image Slider | vSlider</title>
+
+    <style>
+        .disable{
+            display: none !important;
+        }
+        .slider-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+        }
+
+        .vSlider_item {
+            width: 100%;
+            flex: 0 0 100%;
+            height: auto;
+            display: flex;
+        }
+
+        .slider-dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .slider-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #888;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        .slider-dot.active {
+            background-color: #333;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .slider-prev {
+            left: 0;
+        }
+
+        .slider-next {
+            right: 0;
+        }
+
+        .hide_cls {
+            display: none !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="slider-container">
+        <div class="slider" id="vslider">
+            <!-- Images will be loaded dynamically here -->
+        </div>
+        <div class="slider-dots">
+            <!-- Dots will be loaded dynamically here -->
+        </div>
+        <button class="slider-btn slider-prev">Previous</button>
+        <button class="slider-btn slider-next">Next</button>
+    </div>
+
+
+
+
+
+    <!-- js  -->
+    <script src="js/vslider.js"></script>
+
+    <script>
+        vSliderFunction({
+            imagePaths: [
+                'images/rimless_banner_web.jpeg',
+                'images/sports_banner_web.jpeg',
+                'images/face-shape-banner.jpeg',
+                'images/TINTED-GLASSES-bg.png',
+                'images/CAT-EYE-cover-img.jpeg',
+                {
+                    desktop: 'images/rimless_banner_web.jpeg',
+                    mebile: 'images/rimless_banner_web.jpeg',
+                },
+                {
+                    desktop: 'images/sports_banner_web.jpeg'
+                },
+                'images/face-shape-banner.jpeg', //this same image show in both place mobile and desktop
+                {
+                    desktop: 'images/TINTED-GLASSES-bg.png',  // this is show on only desktop device
+                    mebile: 'images/TINTED-GLASSES-bg.png',  // this is show on only Mobile device  
+                },
+                'images/CAT-EYE-cover-img.jpeg',
+            ],
+            allow: {
+                sNavs: true,
+                sDots: true,
+                autoPlayStatus: true,
+                autoPlayInt: 3000,
+            },
+            slideItems: 1,
+
+        });
+    </script>
+</body>
+
+</html>
